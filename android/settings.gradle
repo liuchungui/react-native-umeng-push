@@ -1,0 +1,2 @@
+include ':libs:PushSDK'
+project(':libs:PushSDK').projectDir = new File('libs/PushSDK')
