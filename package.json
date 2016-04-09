@@ -1,6 +1,6 @@
 {
   "name": "react-native-umeng-push",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
