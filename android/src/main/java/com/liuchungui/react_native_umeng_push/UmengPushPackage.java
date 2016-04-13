@@ -1,4 +1,4 @@
-package com.reactnativepush;
+package com.liuchungui.react_native_umeng_push;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;

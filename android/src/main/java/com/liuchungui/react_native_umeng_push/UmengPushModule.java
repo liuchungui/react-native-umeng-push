@@ -1,4 +1,4 @@
-package com.reactnativepush;
+package com.liuchungui.react_native_umeng_push;
 
 import android.app.Notification;
 import android.content.Context;
