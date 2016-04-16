@@ -1,13 +1,14 @@
 {
   "name": "react-native-umeng-push",
-  "version": "0.0.7",
+  "version": "0.1.1",
   "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
     "react": "^0.14.8",
-    "react-native": "^0.23.0"
+    "react-native": "^0.23.0",
+	"react-native-umeng-sdk": "1.4.0"
   },
   "main": "UmengPush.js",
   "devDependencies": {},
