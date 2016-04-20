@@ -11,7 +11,7 @@ npm install react-native-umeng-push --save
 首先，使用rnpm
 
 ```
-rnpm link
+rnpm link react-native-umeng-push
 ```
 
 然后，由于这个库依赖于[react-native-umeng-sdk](https://github.com/liuchungui/react-native-umeng-sdk.git)，需要在你的工程`settings.gradle`文件中添加`PushSDK`。
