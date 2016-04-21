@@ -21,8 +21,12 @@ import UmengPush, {
 } from 'react-native-umeng-push';
 
 class InitProject extends Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
     this._setupRemoteNotification();
+    console.log("UmengPushModule", "jfkdjak*****************");
+  }
+  componentDidMount() {
   }
   render() {
     return (
@@ -54,6 +58,8 @@ class InitProject extends Component {
      * 打开推送消息，进入app
      */
     UmengPush.addEventListener(LaunchAppEvent, (data) => {
+      console.log("LaunchAppEvent");
+      alert("LaunchAppEvent");
       //启动app类型
       console.log(data);
     });
@@ -62,6 +68,7 @@ class InitProject extends Component {
      * 打开某个Url跳入
      */
     UmengPush.addEventListener(OpenUrlEvent, (data) => {
+      console.log("OpenUrlEvent");
       //启动app类型
       console.log(data);
     });
@@ -70,6 +77,7 @@ class InitProject extends Component {
      * 打开指定页面（Activity）
      */
     UmengPush.addEventListener(OpenActivityEvent, (data) => {
+      console.log("OpenActivityEvent");
       //启动app类型
       console.log(data);
     });
@@ -78,6 +86,7 @@ class InitProject extends Component {
      * 获取推送通知和消息
      */
     UmengPush.addEventListener(GetNotificationEvent, (data) => {
+      console.log("GetNotificationEvent");
       console.log(data);
     });
 
@@ -85,6 +94,7 @@ class InitProject extends Component {
      * 自定义推送通知的处理
      */
     UmengPush.addEventListener(DealWithCustomActionEvent, (data) => {
+      console.log("DealWithCustomActionEvent");
       console.log(data);
     });
 
@@ -92,6 +102,7 @@ class InitProject extends Component {
      * 自定义消息的处理
      */
     UmengPush.addEventListener(DealWithCustomMessageEvent, (data) => {
+      console.log("DealWithCustomMessageEvent");
       console.log(data);
     });
   }
