@@ -2,24 +2,30 @@
 这是一个友盟推送的react-native库，暂时只支持安卓。
 
 ##android
-###1、Installation
+###1、安装
 ```
 npm install react-native-umeng-push --save
 ```
 
-###2、Linking to your gradle Project
-首先，使用rnpm
+###2、集成到项目中
+####首先，使用rnpm进行link
 
 ```
 rnpm link react-native-umeng-push
 ```
 
-然后，由于这个库依赖于[react-native-umeng-sdk](https://github.com/liuchungui/react-native-umeng-sdk.git)，需要在你的工程`settings.gradle`文件中添加`PushSDK`。
+####然后，添加PushSDK
+由于这个库依赖于[react-native-umeng-sdk](https://github.com/liuchungui/react-native-umeng-sdk.git)，需要在你的工程`settings.gradle`文件中添加`PushSDK`。
 
 ```
 include ':PushSDK'
 project(':PushSDK').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-umeng-sdk/android/PushSDK')
 ```
+
+####最后，设置Application
+创建一个Application类，并继承`UmengPushApplication`，在主项目中的`AndroidManifest.xml`文件中指定application的名字为你创建的Application。   
+
+注：这一步主要是因为友盟推送需要在Application当中接收推送，`UmengPushApplication`封装了友盟推送的内容。如果友盟推送如果不放在Application当中，退出应用之后是无法接收到推送的。
 
 ###3、Usage
 #####首先，引入库
