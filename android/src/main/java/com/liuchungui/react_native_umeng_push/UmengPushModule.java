@@ -1,23 +1,16 @@
 package com.liuchungui.react_native_umeng_push;
 
-import android.app.Notification;
-import android.content.Context;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
-import com.umeng.message.IUmengRegisterCallback;
-import com.umeng.message.PushAgent;
-import com.umeng.message.UmengMessageHandler;
-import com.umeng.message.UmengNotificationClickHandler;
 import com.umeng.message.UmengRegistrar;
 import com.umeng.message.entity.UMessage;
 
@@ -30,24 +23,26 @@ import java.util.Map;
 /**
  * Created by user on 16/4/7.
  */
-public class UmengPushModule extends ReactContextBaseJavaModule {
+public class UmengPushModule extends ReactContextBaseJavaModule implements LifecycleEventListener {
     protected static final String TAG = UmengPushModule.class.getSimpleName();
-    private static final String LaunchAppEvent = "didLaunchApp";
-    private static final String OpenUrlEvent = "didOpenUrl";
-    private static final String OpenActivityEvent = "didOpenActivity";
-    private static final String DealWithCustomActionEvent = "didDealWithCustomAction";
-    private static final String GetNotificationEvent = "getNotification";
-    private static final String DealWithCustomMessageEvent = "didDealWithCustomMessage";
+    protected static final String LaunchAppEvent = "didLaunchApp";
+    protected static final String OpenUrlEvent = "didOpenUrl";
+    protected static final String OpenActivityEvent = "didOpenActivity";
+    protected static final String DealWithCustomActionEvent = "didDealWithCustomAction";
+    protected static final String GetNotificationEvent = "getNotification";
+    protected static final String DealWithCustomMessageEvent = "didDealWithCustomMessage";
 
-    private String mRegistrationId;
-    private PushAgent mPushAgent;
+    private UmengPushApplication mPushApplication;
     private ReactApplicationContext mReactContext;
 
     public UmengPushModule(ReactApplicationContext reactContext) {
         super(reactContext);
-        Log.i(TAG, "load push module");
         mReactContext = reactContext;
-        enablePush(reactContext);
+        //设置module给application
+        UmengPushApplication application = (UmengPushApplication)reactContext.getBaseContext();
+        mPushApplication = application;
+        //添加监听
+        mReactContext.addLifecycleEventListener(this);
     }
 
     @Override
@@ -74,77 +69,12 @@ public class UmengPushModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void getRegistrationId(Callback callback) {
         String registrationId = UmengRegistrar.getRegistrationId(mReactContext);
-        callback.invoke(registrationId == null ? mRegistrationId : registrationId);
+        callback.invoke(registrationId == null ? mPushApplication.mRegistrationId : registrationId);
     }
 
     @ReactMethod
     public void setDebugMode(boolean debugMode) {
-        mPushAgent.setDebugMode(debugMode);
-    }
-
-    //开启推送
-    private void enablePush(final ReactApplicationContext reactContext) {
-        //开启推送
-        mPushAgent = PushAgent.getInstance(reactContext);
-        mPushAgent.enable(new IUmengRegisterCallback() {
-            @Override
-            public void onRegistered(final String s) {
-                new Handler().post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Log.i(TAG, "enable push, registrationId = " + s);
-                        mRegistrationId = s;
-                    }
-                });
-            }
-        });
-        //统计应用启动数据
-        PushAgent.getInstance(reactContext).onAppStart();
-
-        UmengNotificationClickHandler notificationClickHandler = new UmengNotificationClickHandler() {
-            @Override
-            public void launchApp(Context context, UMessage msg) {
-                super.launchApp(context, msg);
-                Log.i(TAG, "launchApp");
-                sendEvent(reactContext, LaunchAppEvent, msg);
-            }
-
-            @Override
-            public void openUrl(Context context, UMessage msg) {
-                super.openUrl(context, msg);
-                sendEvent(reactContext, OpenUrlEvent, msg);
-            }
-
-            @Override
-            public void openActivity(Context context, UMessage msg) {
-                super.openActivity(context, msg);
-                sendEvent(reactContext, OpenActivityEvent, msg);
-            }
-
-            @Override
-            public void dealWithCustomAction(Context context, UMessage msg) {
-                super.dealWithCustomAction(context, msg);
-                sendEvent(reactContext, DealWithCustomActionEvent, msg);
-            }
-        };
-
-        //设置通知点击处理者
-        mPushAgent.setNotificationClickHandler(notificationClickHandler);
-
-        //设置消息和通知的处理
-        mPushAgent.setMessageHandler(new UmengMessageHandler() {
-            @Override
-            public Notification getNotification(Context context, UMessage msg) {
-                sendEvent(mReactContext, GetNotificationEvent, msg);
-                return super.getNotification(context, msg);
-            }
-
-            @Override
-            public void dealWithCustomMessage(Context context, UMessage msg) {
-                super.dealWithCustomMessage(context, msg);
-                sendEvent(mReactContext, DealWithCustomMessageEvent, msg);
-            }
-        });
+        mPushApplication.mPushAgent.setDebugMode(debugMode);
     }
 
     private WritableMap convertToWriteMap(UMessage msg) {
@@ -166,16 +96,31 @@ public class UmengPushModule extends ReactContextBaseJavaModule {
     }
 
 
-    private void sendEvent(ReactContext reactContext,
-                           String eventName,
-                           UMessage msg) {
-        sendEvent(reactContext, eventName, convertToWriteMap(msg));
+    protected void sendEvent(String eventName, UMessage msg) {
+        sendEvent(eventName, convertToWriteMap(msg));
     }
 
-    private void sendEvent(ReactContext reactContext,
-                           String eventName,
-                           @Nullable WritableMap params) {
-        reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+    private void sendEvent(String eventName, @Nullable WritableMap params) {
+        //此处需要添加hasActiveCatalystInstance，否则可能造成崩溃
+        //问题解决参考: https://github.com/walmartreact/react-native-orientation-listener/issues/8
+        if(mReactContext.hasActiveCatalystInstance()) {
+            mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                     .emit(eventName, params);
+        }
     }
+
+    @Override
+    public void onHostResume() {
+        mPushApplication.setmPushModule(this);
+    }
+
+    @Override
+    public void onHostPause() {
+    }
+
+    @Override
+    public void onHostDestroy() {
+        mPushApplication.setmPushModule(null);
+    }
+
 }
