@@ -1,6 +1,6 @@
 {
   "name": "react-native-umeng-push",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
@@ -17,6 +17,8 @@
     "url": "git+https://github.com/liuchungui/react-native-umeng-push.git"
   },
   "keywords": [
+  	"react-native",
+	"umengpush",
     "umeng",
     "push",
     "umeng-push",

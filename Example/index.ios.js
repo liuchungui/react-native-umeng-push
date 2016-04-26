@@ -8,10 +8,39 @@ import React, {
   Component,
   StyleSheet,
   Text,
-  View
+  View,
+  NativeAppEventEmitter,
+  NativeModules,
 } from 'react-native';
 
+var UmengPush = NativeModules.UmengPush;
+
+var subscription = NativeAppEventEmitter.addListener(
+  'DidReceiveMessage',
+  (userInfo) => {
+    console.log(userInfo);
+    alert("DidReceiveMessage");
+  }
+);
+
+NativeAppEventEmitter.addListener(
+  'DidOpenAPNSMessage',
+  (userInfo) => {
+    console.log(userInfo);
+    alert("DidOpenAPNSMessage");
+  }
+);
+
 class InitProject extends Component {
+  compoentWillUnmount() {
+    subscription.remove();
+  }
+
+  componentDidMount() {
+    // console.log(UmengPush);
+    //设置不弹提醒
+    UmengPush.setAutoAlert(false);
+  }
   render() {
     return (
       <View style={styles.container}>
