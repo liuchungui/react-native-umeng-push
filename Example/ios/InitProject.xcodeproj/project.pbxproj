@@ -22,12 +22,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		CEA4D74A1CCBDE46002E8008 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA4D7491CCBDE46002E8008 /* CoreLocation.framework */; };
-		CEA4D74C1CCBDE4F002E8008 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA4D74B1CCBDE4F002E8008 /* CoreGraphics.framework */; };
-		CEA4D74E1CCBDE68002E8008 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA4D74D1CCBDE67002E8008 /* Foundation.framework */; };
-		CEA4D7501CCBDE70002E8008 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA4D74F1CCBDE70002E8008 /* UIKit.framework */; };
-		CEA4D7DB1CCBE7C3002E8008 /* RCTUmengPush.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D7DA1CCBE7C3002E8008 /* RCTUmengPush.m */; };
-		CEA4D7DF1CCBE7C9002E8008 /* libUMessage_Sdk_1.2.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA4D7DD1CCBE7C9002E8008 /* libUMessage_Sdk_1.2.6.a */; };
+		C7ED29140C644C0FBDF3A91A /* libRCTUmengPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A32E997D84A778CC6335A /* libRCTUmengPush.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +103,13 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		CE2B9FEE1CD0706200857F11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A263AD0053F7401DB657486F /* RCTUmengPush.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEA4D7081CCBD77B002E8008;
+			remoteInfo = RCTUmengPush;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -132,14 +134,8 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		CEA4D7491CCBDE46002E8008 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		CEA4D74B1CCBDE4F002E8008 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CEA4D74D1CCBDE67002E8008 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		CEA4D74F1CCBDE70002E8008 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		CEA4D7D91CCBE7C3002E8008 /* RCTUmengPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTUmengPush.h; sourceTree = "<group>"; };
-		CEA4D7DA1CCBE7C3002E8008 /* RCTUmengPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTUmengPush.m; sourceTree = "<group>"; };
-		CEA4D7DD1CCBE7C9002E8008 /* libUMessage_Sdk_1.2.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.2.6.a; sourceTree = "<group>"; };
-		CEA4D7DE1CCBE7C9002E8008 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		A263AD0053F7401DB657486F /* RCTUmengPush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTUmengPush.xcodeproj; path = "../node_modules/react-native-umeng-push/ios/RCTUmengPush.xcodeproj"; sourceTree = "<group>"; };
+		E20A32E997D84A778CC6335A /* libRCTUmengPush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTUmengPush.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,13 +150,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA4D7501CCBDE70002E8008 /* UIKit.framework in Frameworks */,
-				CEA4D74E1CCBDE68002E8008 /* Foundation.framework in Frameworks */,
-				CEA4D74C1CCBDE4F002E8008 /* CoreGraphics.framework in Frameworks */,
-				CEA4D74A1CCBDE46002E8008 /* CoreLocation.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
-				CEA4D7DF1CCBE7C9002E8008 /* libUMessage_Sdk_1.2.6.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
@@ -169,6 +160,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				C7ED29140C644C0FBDF3A91A /* libRCTUmengPush.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,8 +243,6 @@
 		13B07FAE1A68108700A75B9A /* InitProject */ = {
 			isa = PBXGroup;
 			children = (
-				CEA4D7DC1CCBE7C9002E8008 /* UMessage_Sdk_1.2.6 */,
-				CEA4D7D81CCBE7C3002E8008 /* RCTUmengPush */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -293,6 +283,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				A263AD0053F7401DB657486F /* RCTUmengPush.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -308,10 +299,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				CEA4D74F1CCBDE70002E8008 /* UIKit.framework */,
-				CEA4D74D1CCBDE67002E8008 /* Foundation.framework */,
-				CEA4D74B1CCBDE4F002E8008 /* CoreGraphics.framework */,
-				CEA4D7491CCBDE46002E8008 /* CoreLocation.framework */,
 				13B07FAE1A68108700A75B9A /* InitProject */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* InitProjectTests */,
@@ -330,22 +317,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CEA4D7D81CCBE7C3002E8008 /* RCTUmengPush */ = {
+		CE2B9FE41CD0706100857F11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEA4D7D91CCBE7C3002E8008 /* RCTUmengPush.h */,
-				CEA4D7DA1CCBE7C3002E8008 /* RCTUmengPush.m */,
+				CE2B9FEF1CD0706200857F11 /* libRCTUmengPush.a */,
 			);
-			path = RCTUmengPush;
-			sourceTree = "<group>";
-		};
-		CEA4D7DC1CCBE7C9002E8008 /* UMessage_Sdk_1.2.6 */ = {
-			isa = PBXGroup;
-			children = (
-				CEA4D7DD1CCBE7C9002E8008 /* libUMessage_Sdk_1.2.6.a */,
-				CEA4D7DE1CCBE7C9002E8008 /* UMessage.h */,
-			);
-			path = UMessage_Sdk_1.2.6;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,7 +370,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -441,6 +418,10 @@
 				{
 					ProductGroup = 832341B11AAA6A8300B99B32 /* Products */;
 					ProjectRef = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
+				},
+				{
+					ProductGroup = CE2B9FE41CD0706100857F11 /* Products */;
+					ProjectRef = A263AD0053F7401DB657486F /* RCTUmengPush.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302E01ABCB9EE00DB3ED1 /* Products */;
@@ -534,6 +515,13 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		CE2B9FEF1CD0706200857F11 /* libRCTUmengPush.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTUmengPush.a;
+			remoteRef = CE2B9FEE1CD0706200857F11 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -586,7 +574,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				CEA4D7DB1CCBE7C3002E8008 /* RCTUmengPush.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,6 +616,10 @@
 				INFOPLIST_FILE = InitProjectTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InitProject.app/InitProject";
 			};
@@ -646,6 +637,10 @@
 				INFOPLIST_FILE = InitProjectTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InitProject.app/InitProject";
 			};
@@ -661,13 +656,10 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-umeng-push/ios/**",
 				);
 				INFOPLIST_FILE = InitProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/UMessage_Sdk_1.2.6",
-				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fal.push;
 				PRODUCT_NAME = InitProject;
@@ -683,13 +675,10 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-umeng-push/ios/**",
 				);
 				INFOPLIST_FILE = InitProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/UMessage_Sdk_1.2.6",
-				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fal.push;
 				PRODUCT_NAME = InitProject;
@@ -735,6 +724,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-umeng-push/ios/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -775,6 +765,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-umeng-push/ios/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;

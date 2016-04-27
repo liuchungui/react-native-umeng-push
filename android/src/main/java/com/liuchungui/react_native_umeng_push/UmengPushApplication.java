@@ -69,25 +69,25 @@ public class UmengPushApplication extends Application {
             public void launchApp(Context context, UMessage msg) {
                 super.launchApp(context, msg);
                 Log.i(TAG, "launchApp");
-                clikHandlerSendEvent(UmengPushModule.LaunchAppEvent, msg);
+                clikHandlerSendEvent(UmengPushModule.DidOpenMessage, msg);
             }
 
             @Override
             public void openUrl(Context context, UMessage msg) {
                 super.openUrl(context, msg);
-                clikHandlerSendEvent(UmengPushModule.OpenUrlEvent, msg);
+                clikHandlerSendEvent(UmengPushModule.DidOpenMessage, msg);
             }
 
             @Override
             public void openActivity(Context context, UMessage msg) {
                 super.openActivity(context, msg);
-                clikHandlerSendEvent(UmengPushModule.OpenActivityEvent, msg);
+                clikHandlerSendEvent(UmengPushModule.DidOpenMessage, msg);
             }
 
             @Override
             public void dealWithCustomAction(Context context, UMessage msg) {
                 super.dealWithCustomAction(context, msg);
-                clikHandlerSendEvent(UmengPushModule.DealWithCustomActionEvent, msg);
+                clikHandlerSendEvent(UmengPushModule.DidOpenMessage, msg);
             }
         };
 
@@ -98,7 +98,7 @@ public class UmengPushApplication extends Application {
         mPushAgent.setMessageHandler(new UmengMessageHandler() {
             @Override
             public Notification getNotification(Context context, UMessage msg) {
-                messageHandlerSendEvent(UmengPushModule.GetNotificationEvent, msg);
+                messageHandlerSendEvent(UmengPushModule.DidReceiveMessage, msg);
                 Log.i(TAG, msg.toString());
                 return super.getNotification(context, msg);
             }
@@ -106,9 +106,16 @@ public class UmengPushApplication extends Application {
             @Override
             public void dealWithCustomMessage(Context context, UMessage msg) {
                 super.dealWithCustomMessage(context, msg);
-                messageHandlerSendEvent(UmengPushModule.DealWithCustomMessageEvent, msg);
+                messageHandlerSendEvent(UmengPushModule.DidReceiveMessage, msg);
             }
         });
+
+        //设置debug状态
+        if(BuildConfig.DEBUG) {
+            mPushAgent.setDebugMode(true);
+        }
+        //前台不显示通知
+        mPushAgent.setNotificaitonOnForeground(false);
     }
 
     /**

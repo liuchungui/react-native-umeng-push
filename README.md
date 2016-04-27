@@ -1,20 +1,34 @@
 #react-native-umeng-push
-这是一个友盟推送的react-native库，暂时只支持安卓。
-
-##android
-###1、安装
+##安装
 ```
-npm install react-native-umeng-push --save
+npm install react-native-umeng-push
 ```
 
-###2、集成到项目中
-####首先，使用rnpm进行link
+##集成到iOS
+在`Appdelegate.m`中对应的位置添加如下三个API：
 
 ```
-rnpm link react-native-umeng-push
-```
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  //注册友盟推送
+  [RCTUmengPush registerWithAppkey:@"your app key" launchOptions:launchOptions];
+}
 
-####然后，添加PushSDK
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+  //获取deviceToken
+  [RCTUmengPush application:application didRegisterDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+  //获取远程推送消息
+  [RCTUmengPush application:application didReceiveRemoteNotification:userInfo];
+}
+```
+ 
+##集成到android
+####1、添加PushSDK
 由于这个库依赖于[react-native-umeng-sdk](https://github.com/liuchungui/react-native-umeng-sdk.git)，需要在你的工程`settings.gradle`文件中添加`PushSDK`。
 
 ```
@@ -22,127 +36,70 @@ include ':PushSDK'
 project(':PushSDK').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-umeng-sdk/android/PushSDK')
 ```
 
-####最后，设置Application
+####2、设置Application
 创建一个Application类，并继承`UmengPushApplication`，在主项目中的`AndroidManifest.xml`文件中指定application的名字为你创建的Application。   
 
 注：这一步主要是因为友盟推送需要在Application当中接收推送，`UmengPushApplication`封装了友盟推送的内容。如果友盟推送如果不放在Application当中，退出应用之后是无法接收到推送的。
 
-###3、Usage
-#####首先，引入库
+####3、添加AppKey & Umeng Message Secret
+在项目工程的`AndroidManifest.xml`中的<Application>标签下添加:
 
 ```
-import UmengPush, {
-  LaunchAppEvent,
-  OpenUrlEvent,
-  OpenActivityEvent,
-  DealWithCustomActionEvent,
-  GetNotificationEvent,
-  DealWithCustomMessageEvent,
-} from 'react-native-umeng-push';
-```
-#####然后，获取deviceToken
-```
-    /**
-     * 获取deviceToken
-     */
-    UmengPush.getRegistrationId(registrationId => {
-      console.log("deviceToken: ", registrationId);
-    })
+<meta-data
+    android:name="UMENG_APPKEY"
+    android:value="xxxxxxxxxxxxxxxxxxxxxxxxxxxx" >
+</meta-data>
+<meta-data
+    android:name="UMENG_MESSAGE_SECRET"
+    android:value="xxxxxxxxxxxxxxxxxxxxxxxxxxxx" >
+</meta-data>
 ```
 
-####最后，监听事件
-事件暂时有六个，与友盟的SDK一一对应
+####4、在项目的build.gradle里面配置applicationId
+在自己项目的build.gradle里面一定要配置applicationId，`PushSDK`下的`AndroidManifest.xml`里面的${applicationId}会引用到applicationId。
 
-* LaunchAppEvent
-* OpenUrlEvent
-* OpenActivityEvent
-* DealWithCustomActionEvent
-* GetNotificationEvent
-* DealWithCustomMessageEvent
-
-代码可以参考如下：
+如下所示： 
 
 ```
-    /**
-     * 打开推送消息，进入app
-     */
-    UmengPush.addEventListener(LaunchAppEvent, (data) => {
-      //启动app类型
-      console.log(data);
-    });
-```
-
-###4、Example
-**注：可以下载代码看里面的Example**
-
-```
-import UmengPush, {
-  LaunchAppEvent,
-  OpenUrlEvent,
-  OpenActivityEvent,
-  DealWithCustomActionEvent,
-  GetNotificationEvent,
-  DealWithCustomMessageEvent,
-} from 'react-native-umeng-push';
-
-class InitProject extends Component {
-  componentDidMount() {
-    this._setupRemoteNotification();
-  }
-  //启动推送通知
-  _setupRemoteNotification() {
-    /**
-     * 获取deviceToken
-     */
-    UmengPush.getRegistrationId(registrationId => {
-      console.log("deviceToken: ", registrationId);
-    })
-
-    // UmengPush.setDebugMode(false);
-    /**
-     * 打开推送消息，进入app
-     */
-    UmengPush.addEventListener(LaunchAppEvent, (data) => {
-      //启动app类型
-      console.log(data);
-    });
-
-    /**
-     * 打开某个Url跳入
-     */
-    UmengPush.addEventListener(OpenUrlEvent, (data) => {
-      //启动app类型
-      console.log(data);
-    });
-
-    /**
-     * 打开指定页面（Activity）
-     */
-    UmengPush.addEventListener(OpenActivityEvent, (data) => {
-      //启动app类型
-      console.log(data);
-    });
-
-    /**
-     * 获取推送通知和消息
-     */
-    UmengPush.addEventListener(GetNotificationEvent, (data) => {
-      console.log(data);
-    });
-
-    /**
-     * 自定义推送通知的处理
-     */
-    UmengPush.addEventListener(DealWithCustomActionEvent, (data) => {
-      console.log(data);
-    });
-
-    /**
-     * 自定义消息的处理
-     */
-    UmengPush.addEventListener(DealWithCustomMessageEvent, (data) => {
-      console.log(data);
-    });
-  }
+defaultConfig { 
+applicationId "应用的包名" 
+minSdkVersion 8 
+targetSdkVersion 22 
 }
 ```
+**注：**如果是android6.0以上的api编译，需要在PushSDK的build.gradle文件的android{}块内添加useLibrary 'org.apache.http.legacy'，并把compileSdkVersion的版本号改为23。
+
+详情参考：[友盟安卓SDK集成指南](http://dev.umeng.com/push/android/integration)
+
+##API
+* getDeviceToken 获取DeviceToken
+* didReceiveMessage 接收到推送消息
+* didOpenMessage 打开推送消息
+
+
+##Usage
+首先，引入库
+
+```
+import UmengPush from 'react-native-umeng-push';
+```
+
+然后，获取deviceToken
+
+```
+    UmengPush.getDeviceToken(deviceToken => {
+      console.log("deviceToken: ", deviceToken);
+    })
+```
+
+最后，监听事件
+
+```
+    UmengPush.didReceiveMessage(message => {
+      console.log("didReceiveMessage:", message);
+    });
+    UmengPush.didOpenMessage(message => {
+      console.log("didOpenMessage:", message);
+    });
+```
+**使用详情，请下载代码查看Example**

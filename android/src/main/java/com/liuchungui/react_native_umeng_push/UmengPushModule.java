@@ -25,12 +25,8 @@ import java.util.Map;
  */
 public class UmengPushModule extends ReactContextBaseJavaModule implements LifecycleEventListener {
     protected static final String TAG = UmengPushModule.class.getSimpleName();
-    protected static final String LaunchAppEvent = "didLaunchApp";
-    protected static final String OpenUrlEvent = "didOpenUrl";
-    protected static final String OpenActivityEvent = "didOpenActivity";
-    protected static final String DealWithCustomActionEvent = "didDealWithCustomAction";
-    protected static final String GetNotificationEvent = "getNotification";
-    protected static final String DealWithCustomMessageEvent = "didDealWithCustomMessage";
+    protected static final String DidReceiveMessage = "DidReceiveMessage";
+    protected static final String DidOpenMessage = "DidOpenMessage";
 
     private UmengPushApplication mPushApplication;
     private ReactApplicationContext mReactContext;
@@ -53,12 +49,8 @@ public class UmengPushModule extends ReactContextBaseJavaModule implements Lifec
     @Override
     public Map<String, Object> getConstants() {
         final Map<String, Object> constants = new HashMap<>();
-        constants.put("LaunchAppEvent", LaunchAppEvent);
-        constants.put("OpenUrlEvent", OpenUrlEvent);
-        constants.put("OpenActivityEvent", OpenActivityEvent);
-        constants.put("DealWithCustomActionEvent", DealWithCustomActionEvent);
-        constants.put("GetNotificationEvent", GetNotificationEvent);
-        constants.put("DealWithCustomMessageEvent", DealWithCustomMessageEvent);
+        constants.put(DidReceiveMessage, DidReceiveMessage);
+        constants.put(DidOpenMessage, DidOpenMessage);
         return constants;
     }
 
@@ -67,14 +59,9 @@ public class UmengPushModule extends ReactContextBaseJavaModule implements Lifec
      * @param callback
      */
     @ReactMethod
-    public void getRegistrationId(Callback callback) {
+    public void getDeviceToken(Callback callback) {
         String registrationId = UmengRegistrar.getRegistrationId(mReactContext);
         callback.invoke(registrationId == null ? mPushApplication.mRegistrationId : registrationId);
-    }
-
-    @ReactMethod
-    public void setDebugMode(boolean debugMode) {
-        mPushApplication.mPushAgent.setDebugMode(debugMode);
     }
 
     private WritableMap convertToWriteMap(UMessage msg) {

@@ -11,41 +11,29 @@ import React, {
   View,
   NativeAppEventEmitter,
   NativeModules,
+  DeviceEventEmitter,
 } from 'react-native';
 
-var UmengPush = NativeModules.UmengPush;
-
-var subscription = NativeAppEventEmitter.addListener(
-  'DidReceiveMessage',
-  (userInfo) => {
-    console.log(userInfo);
-    alert("DidReceiveMessage");
-  }
-);
-
-NativeAppEventEmitter.addListener(
-  'DidOpenAPNSMessage',
-  (userInfo) => {
-    console.log(userInfo);
-    alert("DidOpenAPNSMessage");
-  }
-);
+import UmengPush from './UmengPush';
 
 class InitProject extends Component {
-  compoentWillUnmount() {
-    subscription.remove();
-  }
-
   componentDidMount() {
-    // console.log(UmengPush);
-    //设置不弹提醒
-    UmengPush.setAutoAlert(false);
+    UmengPush.getDeviceToken(deviceToken => {
+      console.log(deviceToken);
+      alert(deviceToken);
+    });
+    UmengPush.didReceiveMessage(message => {
+      console.log("didReceiveMessage:", message);
+    });
+    UmengPush.didOpenMessage(message => {
+      console.log("didOpenMessage:", message);
+    });
   }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          react-native-umeng-push Example
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
