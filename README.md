@@ -1,7 +1,7 @@
 #react-native-umeng-push
 ##安装
 ```
-npm install react-native-umeng-push
+rnpm install react-native-umeng-push
 ```
 
 ##集成到iOS
