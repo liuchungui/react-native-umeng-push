@@ -72,34 +72,39 @@ targetSdkVersion 22
 详情参考：[友盟安卓SDK集成指南](http://dev.umeng.com/push/android/integration)
 
 ##API
-* getDeviceToken 获取DeviceToken
-* didReceiveMessage 接收到推送消息
-* didOpenMessage 打开推送消息
+
+| API | Note |    
+|---|---|
+| `getDeviceToken` | 获取DeviceToken |
+| `didReceiveMessage` | 接收到推送消息回调的方法 |
+| `didOpenMessage` | 点击推送消息打开应用回调的方法 |
 
 
 ##Usage
-首先，引入库
 
 ```
 import UmengPush from 'react-native-umeng-push';
-```
 
-然后，获取deviceToken
+//获取DeviceToken
+UmengPush.getDeviceToken(deviceToken => {
+    console.log("deviceToken: ", deviceToken);
+});
+
+//接收到推送消息回调
+UmengPush.didReceiveMessage(message => {
+    console.log("didReceiveMessage:", message);
+});
+
+//点击推送消息打开应用回调
+UmengPush.didOpenMessage(message => {
+    console.log("didOpenMessage:", message);
+});
 
 ```
-    UmengPush.getDeviceToken(deviceToken => {
-      console.log("deviceToken: ", deviceToken);
-    })
-```
+**具体使用详情，请下载代码查看Example**
 
-最后，监听事件
 
-```
-    UmengPush.didReceiveMessage(message => {
-      console.log("didReceiveMessage:", message);
-    });
-    UmengPush.didOpenMessage(message => {
-      console.log("didOpenMessage:", message);
-    });
-```
-**使用详情，请下载代码查看Example**
+##More
+* 欢迎大家Pull Request
+* 有什么疑问，欢迎提问题
+* 觉得好的，来一个star

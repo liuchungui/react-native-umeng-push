@@ -152,12 +152,10 @@ RCT_EXPORT_METHOD(getDeviceToken:(RCTResponseSenderBlock)callback) {
     [RCTUmengPush sharedInstance].deviceToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
                                                   stringByReplacingOccurrencesOfString: @">" withString: @""]
                                                  stringByReplacingOccurrencesOfString: @" " withString: @""];
-    NSLog(@"***didRegisterDeviceToken: %@", [RCTUmengPush sharedInstance].deviceToken);
     [UMessage registerDeviceToken:deviceToken];
 }
 
 + (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    NSLog(@"***didReceiveRemoteNotification");
     [UMessage didReceiveRemoteNotification:userInfo];
     //send event
     if (application.applicationState == UIApplicationStateInactive) {
