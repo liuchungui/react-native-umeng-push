@@ -17,17 +17,24 @@ import React, {
 import UmengPush from './UmengPush';
 
 class InitProject extends Component {
-  componentDidMount() {
+  constructor() {
+    super();
     UmengPush.getDeviceToken(deviceToken => {
       console.log(deviceToken);
-      alert(deviceToken);
+      // alert(deviceToken);
     });
     UmengPush.didReceiveMessage(message => {
       console.log("didReceiveMessage:", message);
+      // alert("didReceiveMessage");
     });
     UmengPush.didOpenMessage(message => {
       console.log("didOpenMessage:", message);
+      // console.log("didReceiveMessage:", message);
+      // console.log("didOpenMessage:", message);
+      // alert("didOpenMessage");
     });
+  }
+  componentDidMount() {
   }
   render() {
     return (
