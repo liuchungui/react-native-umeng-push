@@ -91,8 +91,12 @@ public class UmengPushModule extends ReactContextBaseJavaModule implements Lifec
         //此处需要添加hasActiveCatalystInstance，否则可能造成崩溃
         //问题解决参考: https://github.com/walmartreact/react-native-orientation-listener/issues/8
         if(mReactContext.hasActiveCatalystInstance()) {
+            Log.i(TAG, "hasActiveCatalystInstance");
             mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                     .emit(eventName, params);
+        }
+        else {
+            Log.i(TAG, "not hasActiveCatalystInstance");
         }
     }
 

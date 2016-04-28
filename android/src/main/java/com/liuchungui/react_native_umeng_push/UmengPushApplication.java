@@ -33,18 +33,13 @@ public class UmengPushApplication extends Application {
 
     protected void setmPushModule(UmengPushModule module) {
         mPushModule = module;
-        //延时500毫秒发送推送，否则可能收不到
-        new Handler().postDelayed(new Runnable(){
-            public void run() {
-                if(tmpMessage != null && tmpEvent != null && mPushModule != null) {
-                    //execute the task
-                    clikHandlerSendEvent(tmpEvent, tmpMessage);
-                    //发送事件之后，清空临时内容
-                    tmpEvent = null;
-                    tmpMessage = null;
-                }
-            }
-        }, 500);
+        if (tmpMessage != null && tmpEvent != null && mPushModule != null) {
+            //execute the task
+            clikHandlerSendEvent(tmpEvent, tmpMessage);
+            //发送事件之后，清空临时内容
+            tmpEvent = null;
+            tmpMessage = null;
+        }
     }
     //开启推送
     private void enablePush() {
@@ -68,7 +63,7 @@ public class UmengPushApplication extends Application {
             @Override
             public void launchApp(Context context, UMessage msg) {
                 super.launchApp(context, msg);
-                Log.i(TAG, "launchApp");
+//                Log.i(TAG, "launchApp");
                 clikHandlerSendEvent(UmengPushModule.DidOpenMessage, msg);
             }
 
@@ -123,13 +118,18 @@ public class UmengPushApplication extends Application {
      * @param event
      * @param msg
      */
-    private void clikHandlerSendEvent(String event, UMessage msg) {
+    private void clikHandlerSendEvent(final String event, final UMessage msg) {
         if(mPushModule == null) {
             tmpEvent = event;
             tmpMessage = msg;
             return;
         }
-        mPushModule.sendEvent(event, msg);
+        //延时500毫秒发送推送，否则可能收不到
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                mPushModule.sendEvent(event, msg);
+            }
+        }, 500);
     }
 
     /**
