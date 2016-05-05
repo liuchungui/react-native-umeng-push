@@ -23,7 +23,6 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		652C65C019B94A358169BCAF /* libRCTUmengPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 878684054E534BDB91150BC6 /* libRCTUmengPush.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		C2DC7CBFC665495F8B298EC2 /* libBGNativeModuleExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B10824AA2F6E48B4BB1CC93D /* libBGNativeModuleExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,13 +103,6 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		CE2BA1631CD7701A00857F11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A6A90C7E9734CE29E73E743 /* BGNativeModuleExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CE2BA1001CD71DDD00857F11;
-			remoteInfo = BGNativeModuleExample;
-		};
 		CEB3FBBB1CDBAA20009C5989 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 77A5BBE3C9E64CD9B375F830 /* RCTUmengPush.xcodeproj */;
@@ -144,8 +136,6 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		878684054E534BDB91150BC6 /* libRCTUmengPush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTUmengPush.a; sourceTree = "<group>"; };
-		9A6A90C7E9734CE29E73E743 /* BGNativeModuleExample.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BGNativeModuleExample.xcodeproj; path = "../node_modules/react-native-nativemodule-example/ios/BGNativeModuleExample.xcodeproj"; sourceTree = "<group>"; };
-		B10824AA2F6E48B4BB1CC93D /* libBGNativeModuleExample.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBGNativeModuleExample.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +160,6 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				C2DC7CBFC665495F8B298EC2 /* libBGNativeModuleExample.a in Frameworks */,
 				652C65C019B94A358169BCAF /* libRCTUmengPush.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +283,6 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				9A6A90C7E9734CE29E73E743 /* BGNativeModuleExample.xcodeproj */,
 				77A5BBE3C9E64CD9B375F830 /* RCTUmengPush.xcodeproj */,
 			);
 			name = Libraries;
@@ -325,14 +313,6 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* TestProject.app */,
 				00E356EE1AD99517003FC87E /* TestProjectTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CE2BA1601CD7701A00857F11 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CE2BA1641CD7701A00857F11 /* libBGNativeModuleExample.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -411,10 +391,6 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = CE2BA1601CD7701A00857F11 /* Products */;
-					ProjectRef = 9A6A90C7E9734CE29E73E743 /* BGNativeModuleExample.xcodeproj */;
-				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -537,13 +513,6 @@
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CE2BA1641CD7701A00857F11 /* libBGNativeModuleExample.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libBGNativeModuleExample.a;
-			remoteRef = CE2BA1631CD7701A00857F11 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		CEB3FBBC1CDBAA20009C5989 /* libRCTUmengPush.a */ = {
