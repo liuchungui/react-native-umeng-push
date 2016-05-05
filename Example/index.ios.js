@@ -14,7 +14,7 @@ import React, {
   DeviceEventEmitter,
 } from 'react-native';
 
-import UmengPush from './UmengPush';
+import UmengPush from 'react-native-umeng-push';
 
 class InitProject extends Component {
   componentDidMount() {
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('InitProject', () => InitProject);
+AppRegistry.registerComponent('TestProject', () => InitProject);

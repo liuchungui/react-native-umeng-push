@@ -5,14 +5,13 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
 		00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
-		00E356F31AD99517003FC87E /* InitProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* InitProjectTests.m */; };
+		00E356F31AD99517003FC87E /* TestProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TestProjectTests.m */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -22,7 +21,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		C7ED29140C644C0FBDF3A91A /* libRCTUmengPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A32E997D84A778CC6335A /* libRCTUmengPush.a */; };
+		C2DC7CBFC665495F8B298EC2 /* libBGNativeModuleExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B10824AA2F6E48B4BB1CC93D /* libBGNativeModuleExample.a */; };
+		652C65C019B94A358169BCAF /* libRCTUmengPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 878684054E534BDB91150BC6 /* libRCTUmengPush.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +66,7 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = InitProject;
+			remoteInfo = TestProject;
 		};
 		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -103,12 +103,12 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		CE2B9FEE1CD0706200857F11 /* PBXContainerItemProxy */ = {
+		CE2BA1631CD7701A00857F11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A263AD0053F7401DB657486F /* RCTUmengPush.xcodeproj */;
+			containerPortal = 9A6A90C7E9734CE29E73E743 /* BGNativeModuleExample.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CEA4D7081CCBD77B002E8008;
-			remoteInfo = RCTUmengPush;
+			remoteGlobalIDString = CE2BA1001CD71DDD00857F11;
+			remoteInfo = BGNativeModuleExample;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -119,23 +119,25 @@
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
 		00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTNetwork.xcodeproj; path = "../node_modules/react-native/Libraries/Network/RCTNetwork.xcodeproj"; sourceTree = "<group>"; };
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* InitProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InitProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* TestProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* InitProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitProjectTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* TestProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTests.m; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* InitProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InitProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = InitProject/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = InitProject/AppDelegate.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TestProject/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = TestProject/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = InitProject/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = InitProject/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = InitProject/main.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TestProject/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TestProject/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TestProject/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		A263AD0053F7401DB657486F /* RCTUmengPush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTUmengPush.xcodeproj; path = "../node_modules/react-native-umeng-push/ios/RCTUmengPush.xcodeproj"; sourceTree = "<group>"; };
-		E20A32E997D84A778CC6335A /* libRCTUmengPush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTUmengPush.a; sourceTree = "<group>"; };
+		9A6A90C7E9734CE29E73E743 /* BGNativeModuleExample.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BGNativeModuleExample.xcodeproj; path = "../node_modules/react-native-nativemodule-example/ios/BGNativeModuleExample.xcodeproj"; sourceTree = "<group>"; };
+		B10824AA2F6E48B4BB1CC93D /* libBGNativeModuleExample.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBGNativeModuleExample.a; sourceTree = "<group>"; };
+		77A5BBE3C9E64CD9B375F830 /* RCTUmengPush.xcodeproj */ = {isa = PBXFileReference; name = "RCTUmengPush.xcodeproj"; path = "../node_modules/react-native-umeng-push/ios/RCTUmengPush.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		878684054E534BDB91150BC6 /* libRCTUmengPush.a */ = {isa = PBXFileReference; name = "libRCTUmengPush.a"; path = "libRCTUmengPush.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +162,8 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				C7ED29140C644C0FBDF3A91A /* libRCTUmengPush.a in Frameworks */,
+				C2DC7CBFC665495F8B298EC2 /* libBGNativeModuleExample.a in Frameworks */,
+				652C65C019B94A358169BCAF /* libRCTUmengPush.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,13 +210,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		00E356EF1AD99517003FC87E /* InitProjectTests */ = {
+		00E356EF1AD99517003FC87E /* TestProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* InitProjectTests.m */,
+				00E356F21AD99517003FC87E /* TestProjectTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = InitProjectTests;
+			path = TestProjectTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -240,7 +243,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* InitProject */ = {
+		13B07FAE1A68108700A75B9A /* TestProject */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -251,7 +254,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = InitProject;
+			name = TestProject;
 			sourceTree = "<group>";
 		};
 		146834001AC3E56700842450 /* Products */ = {
@@ -283,7 +286,8 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				A263AD0053F7401DB657486F /* RCTUmengPush.xcodeproj */,
+				9A6A90C7E9734CE29E73E743 /* BGNativeModuleExample.xcodeproj */,
+				77A5BBE3C9E64CD9B375F830 /* RCTUmengPush.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -299,9 +303,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* InitProject */,
+				13B07FAE1A68108700A75B9A /* TestProject */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* InitProjectTests */,
+				00E356EF1AD99517003FC87E /* TestProjectTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 			);
 			indentWidth = 2;
@@ -311,16 +315,16 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* InitProject.app */,
-				00E356EE1AD99517003FC87E /* InitProjectTests.xctest */,
+				13B07F961A680F5B00A75B9A /* TestProject.app */,
+				00E356EE1AD99517003FC87E /* TestProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE2B9FE41CD0706100857F11 /* Products */ = {
+		CE2BA1601CD7701A00857F11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE2B9FEF1CD0706200857F11 /* libRCTUmengPush.a */,
+				CE2BA1641CD7701A00857F11 /* libBGNativeModuleExample.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,9 +332,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* InitProjectTests */ = {
+		00E356ED1AD99517003FC87E /* TestProjectTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "InitProjectTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TestProjectTests" */;
 			buildPhases = (
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
@@ -341,14 +345,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = InitProjectTests;
-			productName = InitProjectTests;
-			productReference = 00E356EE1AD99517003FC87E /* InitProjectTests.xctest */;
+			name = TestProjectTests;
+			productName = TestProjectTests;
+			productReference = 00E356EE1AD99517003FC87E /* TestProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* InitProject */ = {
+		13B07F861A680F5B00A75B9A /* TestProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "InitProject" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TestProject" */;
 			buildPhases = (
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -359,9 +363,9 @@
 			);
 			dependencies = (
 			);
-			name = InitProject;
+			name = TestProject;
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* InitProject.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* TestProject.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -379,7 +383,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "InitProject" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TestProject" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -391,6 +395,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = CE2BA1601CD7701A00857F11 /* Products */;
+					ProjectRef = 9A6A90C7E9734CE29E73E743 /* BGNativeModuleExample.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -420,10 +428,6 @@
 					ProjectRef = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
 				},
 				{
-					ProductGroup = CE2B9FE41CD0706100857F11 /* Products */;
-					ProjectRef = A263AD0053F7401DB657486F /* RCTUmengPush.xcodeproj */;
-				},
-				{
 					ProductGroup = 00C302E01ABCB9EE00DB3ED1 /* Products */;
 					ProjectRef = 00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */;
 				},
@@ -438,8 +442,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* InitProject */,
-				00E356ED1AD99517003FC87E /* InitProjectTests */,
+				13B07F861A680F5B00A75B9A /* TestProject */,
+				00E356ED1AD99517003FC87E /* TestProjectTests */,
 			);
 		};
 /* End PBXProject section */
@@ -515,11 +519,11 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CE2B9FEF1CD0706200857F11 /* libRCTUmengPush.a */ = {
+		CE2BA1641CD7701A00857F11 /* libBGNativeModuleExample.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libRCTUmengPush.a;
-			remoteRef = CE2B9FEE1CD0706200857F11 /* PBXContainerItemProxy */;
+			path = libBGNativeModuleExample.a;
+			remoteRef = CE2BA1631CD7701A00857F11 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -565,7 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* InitProjectTests.m in Sources */,
+				00E356F31AD99517003FC87E /* TestProjectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,7 +587,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* InitProject */;
+			target = 13B07F861A680F5B00A75B9A /* TestProject */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -595,7 +599,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = InitProject;
+			path = TestProject;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -613,15 +617,16 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = InitProjectTests/Info.plist;
+				INFOPLIST_FILE = TestProjectTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InitProject.app/InitProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestProject.app/TestProject";
 			};
 			name = Debug;
 		};
@@ -634,15 +639,16 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = InitProjectTests/Info.plist;
+				INFOPLIST_FILE = TestProjectTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InitProject.app/InitProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestProject.app/TestProject";
 			};
 			name = Release;
 		};
@@ -650,20 +656,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shebing yang (EGKR2LRY9E)";
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-BGNativeModuleExample/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-nativemodule-example/ios/BGNativeModuleExample",
 					"$(SRCROOT)/../node_modules/react-native-umeng-push/ios/**",
 				);
-				INFOPLIST_FILE = InitProject/Info.plist;
+				INFOPLIST_FILE = TestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fal.push;
-				PRODUCT_NAME = InitProject;
-				PROVISIONING_PROFILE = "00def9f7-b045-414e-aca2-8c1df08df644";
+				PRODUCT_NAME = TestProject;
 			};
 			name = Debug;
 		};
@@ -675,14 +680,14 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-BGNativeModuleExample/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-nativemodule-example/ios/BGNativeModuleExample",
 					"$(SRCROOT)/../node_modules/react-native-umeng-push/ios/**",
 				);
-				INFOPLIST_FILE = InitProject/Info.plist;
+				INFOPLIST_FILE = TestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fal.push;
-				PRODUCT_NAME = InitProject;
-				PROVISIONING_PROFILE = "00def9f7-b045-414e-aca2-8c1df08df644";
+				PRODUCT_NAME = TestProject;
 			};
 			name = Release;
 		};
@@ -724,6 +729,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-nativemodule-example/ios/BGNativeModuleExample",
 					"$(SRCROOT)/../node_modules/react-native-umeng-push/ios/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -765,6 +771,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-nativemodule-example/ios/BGNativeModuleExample",
 					"$(SRCROOT)/../node_modules/react-native-umeng-push/ios/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -777,7 +784,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "InitProjectTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TestProjectTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -786,7 +793,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "InitProject" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TestProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -795,7 +802,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "InitProject" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TestProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

@@ -1,9 +1,9 @@
-package com.initproject;
+package com.testproject;
 
 import com.facebook.react.ReactActivity;
+import com.liuchungui.react_native_umeng_push.UmengPushPackage;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
-import com.liuchungui.react_native_umeng_push.UmengPushPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +16,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "InitProject";
+        return "TestProject";
     }
 
     /**
@@ -36,7 +36,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
-                new UmengPushPackage()
+            new UmengPushPackage()
         );
     }
 }

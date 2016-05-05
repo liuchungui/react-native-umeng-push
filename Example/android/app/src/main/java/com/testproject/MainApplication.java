@@ -1,4 +1,4 @@
-package com.initproject;
+package com.testproject;
 
 import com.liuchungui.react_native_umeng_push.UmengPushApplication;
 
