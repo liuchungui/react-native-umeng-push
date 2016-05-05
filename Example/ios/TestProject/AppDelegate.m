@@ -33,7 +33,7 @@
    * on the same Wi-Fi network.
    */
   
-  jsCodeLocation = [NSURL URLWithString:@"http://192.168.30.133:8081/index.ios.bundle?platform=ios&dev=true"];
+  jsCodeLocation = [NSURL URLWithString:@"http://192.168.31.186:8081/index.ios.bundle?platform=ios&dev=true"];
   
   /**
    * OPTION 2
@@ -46,7 +46,7 @@
   //   jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"InitProject"
+                                                      moduleName:@"TestProject"
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
   

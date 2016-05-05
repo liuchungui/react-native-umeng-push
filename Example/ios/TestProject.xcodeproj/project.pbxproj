@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -20,9 +21,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		652C65C019B94A358169BCAF /* libRCTUmengPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 878684054E534BDB91150BC6 /* libRCTUmengPush.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		C2DC7CBFC665495F8B298EC2 /* libBGNativeModuleExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B10824AA2F6E48B4BB1CC93D /* libBGNativeModuleExample.a */; };
-		652C65C019B94A358169BCAF /* libRCTUmengPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 878684054E534BDB91150BC6 /* libRCTUmengPush.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,13 @@
 			remoteGlobalIDString = CE2BA1001CD71DDD00857F11;
 			remoteInfo = BGNativeModuleExample;
 		};
+		CEB3FBBB1CDBAA20009C5989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77A5BBE3C9E64CD9B375F830 /* RCTUmengPush.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEA4D7081CCBD77B002E8008;
+			remoteInfo = RCTUmengPush;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -132,12 +140,12 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TestProject/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TestProject/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		77A5BBE3C9E64CD9B375F830 /* RCTUmengPush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTUmengPush.xcodeproj; path = "../node_modules/react-native-umeng-push/ios/RCTUmengPush.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		878684054E534BDB91150BC6 /* libRCTUmengPush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTUmengPush.a; sourceTree = "<group>"; };
 		9A6A90C7E9734CE29E73E743 /* BGNativeModuleExample.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BGNativeModuleExample.xcodeproj; path = "../node_modules/react-native-nativemodule-example/ios/BGNativeModuleExample.xcodeproj"; sourceTree = "<group>"; };
 		B10824AA2F6E48B4BB1CC93D /* libBGNativeModuleExample.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBGNativeModuleExample.a; sourceTree = "<group>"; };
-		77A5BBE3C9E64CD9B375F830 /* RCTUmengPush.xcodeproj */ = {isa = PBXFileReference; name = "RCTUmengPush.xcodeproj"; path = "../node_modules/react-native-umeng-push/ios/RCTUmengPush.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		878684054E534BDB91150BC6 /* libRCTUmengPush.a */ = {isa = PBXFileReference; name = "libRCTUmengPush.a"; path = "libRCTUmengPush.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +337,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CEB3FBB01CDBAA20009C5989 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3FBBC1CDBAA20009C5989 /* libRCTUmengPush.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -428,6 +444,10 @@
 					ProjectRef = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
 				},
 				{
+					ProductGroup = CEB3FBB01CDBAA20009C5989 /* Products */;
+					ProjectRef = 77A5BBE3C9E64CD9B375F830 /* RCTUmengPush.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302E01ABCB9EE00DB3ED1 /* Products */;
 					ProjectRef = 00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */;
 				},
@@ -524,6 +544,13 @@
 			fileType = archive.ar;
 			path = libBGNativeModuleExample.a;
 			remoteRef = CE2BA1631CD7701A00857F11 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CEB3FBBC1CDBAA20009C5989 /* libRCTUmengPush.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTUmengPush.a;
+			remoteRef = CEB3FBBB1CDBAA20009C5989 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -656,6 +683,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: shebing yang (EGKR2LRY9E)";
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -669,6 +697,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TestProject;
+				PROVISIONING_PROFILE = "00def9f7-b045-414e-aca2-8c1df08df644";
 			};
 			name = Debug;
 		};
@@ -688,6 +717,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TestProject;
+				PROVISIONING_PROFILE = "00def9f7-b045-414e-aca2-8c1df08df644";
 			};
 			name = Release;
 		};
