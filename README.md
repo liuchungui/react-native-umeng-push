@@ -103,6 +103,18 @@ UmengPush.didOpenMessage(message => {
 ```
 **具体使用详情，请下载代码查看Example**
 
+##Example
+```
+git clone https://github.com/liuchungui/react-native-umeng-push.git
+cd react-native-umeng-push/Example
+npm install --save
+```
+
+##注意
+* 安卓如果获取不到deviceToken也接收不到推送，请查看友盟后台的包名是否一致，当前设备是否添加到测试设备当中
+
+
+
 
 ##More
 * 欢迎大家Pull Request
