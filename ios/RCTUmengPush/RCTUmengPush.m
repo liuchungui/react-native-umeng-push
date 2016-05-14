@@ -167,17 +167,13 @@ RCT_EXPORT_METHOD(getDeviceToken:(RCTResponseSenderBlock)callback) {
 }
 
 + (void)didReceiveRemoteNotificationWhenFirstLaunchApp:(NSDictionary *)launchOptions {
-    static NSInteger times = 0;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), [self sharedMethodQueue], ^{
-        if([RCTUmengPush sharedInstance].bridge.isValid) {
+        //判断当前模块是否正在加载，已经加载成功，则发送事件
+        if(![RCTUmengPush sharedInstance].bridge.isLoading) {
             [UMessage didReceiveRemoteNotification:launchOptions];
             [[RCTUmengPush sharedInstance] didOpenRemoteNotification:launchOptions];
         }
         else {
-            //继续执行，发送三次，直到当前模块有效为止
-            if(times >= 3) {
-                return;
-            }
             [self didReceiveRemoteNotificationWhenFirstLaunchApp:launchOptions];
         }
     });
