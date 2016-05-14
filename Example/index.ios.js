@@ -20,12 +20,14 @@ class InitProject extends Component {
   componentDidMount() {
     UmengPush.getDeviceToken(deviceToken => {
       console.log(deviceToken);
-      alert(deviceToken);
+      // alert(deviceToken);
     });
     UmengPush.didReceiveMessage(message => {
+      alert("didReceiveMessage");
       console.log("didReceiveMessage:", message);
     });
     UmengPush.didOpenMessage(message => {
+      alert("didOpenMessage");
       console.log("didOpenMessage:", message);
     });
   }
