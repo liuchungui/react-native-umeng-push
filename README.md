@@ -28,7 +28,7 @@ rnpm install react-native-umeng-push
 ```
  
 ##集成到android
-注意：0.29版本，reactNative会自动创建MainApplication，并且将添加原生模块从MainActivity移到了MainApplication，详情请见[http://reactnative.cn/post/1774](http://reactnative.cn/post/1774)，所以我们的这里继承也有些变化，如果你的reactNative版本是0.29以下，请点击[https://github.com/liuchungui/react-native-umeng-push/blob/master/README-pre.md)
+注意：0.29版本以后，reactNative会自动创建MainApplication，并且将添加原生模块从MainActivity移到了MainApplication，详情请见[http://reactnative.cn/post/1774](http://reactnative.cn/post/1774)，所以我们的这里继承也有些变化，如果你的reactNative版本是0.29以下，请点击[README-pre.md](https://github.com/liuchungui/react-native-umeng-push/blob/master/README-pre.md)
 
 ####1、添加PushSDK
 由于这个库依赖于[react-native-umeng-sdk](https://github.com/liuchungui/react-native-umeng-sdk.git)，需要在你的工程`settings.gradle`文件中添加`PushSDK`。
