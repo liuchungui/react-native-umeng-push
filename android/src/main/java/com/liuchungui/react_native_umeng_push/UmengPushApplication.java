@@ -110,7 +110,7 @@ public class UmengPushApplication extends Application {
             mPushAgent.setDebugMode(true);
         }
         //前台不显示通知
-        mPushAgent.setNotificaitonOnForeground(false);
+        // mPushAgent.setNotificaitonOnForeground(false);
     }
 
     /**
