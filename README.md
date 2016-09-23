@@ -28,6 +28,8 @@ rnpm install react-native-umeng-push
 ```
  
 ##集成到android
+注意：0.29版本，reactNative会自动创建MainApplication，并且将添加原生模块从MainActivity移到了MainApplication，详情请见[http://reactnative.cn/post/1774](http://reactnative.cn/post/1774)，所以我们的这里继承也有些变化，如果你的reactNative版本是0.29以下，请点击[README-pre.md](https://github.com/liuchungui/react-native-umeng-push/README-pre.md)
+
 ####1、添加PushSDK
 由于这个库依赖于[react-native-umeng-sdk](https://github.com/liuchungui/react-native-umeng-sdk.git)，需要在你的工程`settings.gradle`文件中添加`PushSDK`。
 
@@ -37,7 +39,29 @@ project(':PushSDK').projectDir = new File(rootProject.projectDir, '../node_modul
 ```
 
 ####2、设置Application
-创建一个Application类，并继承`UmengPushApplication`，在主项目中的`AndroidManifest.xml`文件中指定application的名字为你创建的Application。   
+新版本的react-native工程已经存在`MainApplication`，我们只需要将`MainApplication`继承`UmengApplication`，然后添加对应的`UmengPushPackage`进去就行了，如下所示：
+
+```java
+import com.liuchungui.react_native_umeng_push.UmengPushApplication;
+import com.liuchungui.react_native_umeng_push.UmengPushPackage;
+
+public class MainApplication extends UmengPushApplication implements ReactApplication {
+
+  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+    @Override
+    protected boolean getUseDeveloperSupport() {
+      return BuildConfig.DEBUG;
+    }
+
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+          new UmengPushPackage()
+      );
+    }
+  };
+```   
 
 注：这一步主要是因为友盟推送需要在Application当中接收推送，`UmengPushApplication`封装了友盟推送的内容。如果友盟推送如果不放在Application当中，退出应用之后是无法接收到推送的。
 
@@ -55,18 +79,7 @@ project(':PushSDK').projectDir = new File(rootProject.projectDir, '../node_modul
 </meta-data>
 ```
 
-####4、在项目的build.gradle里面配置applicationId
-在自己项目的build.gradle里面一定要配置applicationId，`PushSDK`下的`AndroidManifest.xml`里面的${applicationId}会引用到applicationId。
-
-如下所示： 
-
-```
-defaultConfig { 
-applicationId "应用的包名" 
-minSdkVersion 8 
-targetSdkVersion 22 
-}
-```
+####4、其它
 **注：**如果是android6.0以上的api编译，需要在PushSDK的build.gradle文件的android{}块内添加useLibrary 'org.apache.http.legacy'，并把compileSdkVersion的版本号改为23。
 
 详情参考：[友盟安卓SDK集成指南](http://dev.umeng.com/push/android/integration)
