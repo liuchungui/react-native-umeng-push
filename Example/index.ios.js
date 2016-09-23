@@ -1,41 +1,23 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ * @flow
  */
 
-import React, {
+import React, { Component } from 'react';
+import {
   AppRegistry,
-  Component,
   StyleSheet,
   Text,
-  View,
-  NativeAppEventEmitter,
-  NativeModules,
-  DeviceEventEmitter,
+  View
 } from 'react-native';
 
-import UmengPush from 'react-native-umeng-push';
-
-class InitProject extends Component {
-  componentDidMount() {
-    UmengPush.getDeviceToken(deviceToken => {
-      console.log(deviceToken);
-      // alert(deviceToken);
-    });
-    UmengPush.didReceiveMessage(message => {
-      alert("didReceiveMessage");
-      console.log("didReceiveMessage:", message);
-    });
-    UmengPush.didOpenMessage(message => {
-      alert("didOpenMessage");
-      console.log("didOpenMessage:", message);
-    });
-  }
+class TestProject extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          react-native-umeng-push Example
+          Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
@@ -68,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('TestProject', () => InitProject);
+AppRegistry.registerComponent('TestProject', () => TestProject);

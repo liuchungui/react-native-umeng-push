@@ -11,7 +11,7 @@
         android:targetSdkVersion="22" />
 
     <application
-        android:name="MainApplication"
+      android:name=".MainApplication"
       android:allowBackup="true"
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
@@ -26,12 +26,12 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="57071788e0f55a9c18000245" />
-        <meta-data
-            android:name="UMENG_MESSAGE_SECRET"
-            android:value="32bb6016789cf75057019f4e8e94d829" />
     </application>
+    <meta-data
+    android:name="UMENG_APPKEY"
+    android:value="57071788e0f55a9c18000245" />
+<meta-data
+    android:name="UMENG_MESSAGE_SECRET"
+    android:value="32bb6016789cf75057019f4e8e94d829" />
 
 </manifest>
