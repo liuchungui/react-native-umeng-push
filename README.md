@@ -79,7 +79,14 @@ public class MainApplication extends UmengPushApplication implements ReactApplic
 </meta-data>
 ```
 
-####4、其它
+####4、安卓集成获取不到deviceToken问题
+* 确定是否将appkey、MessageSecret、以及包名都更换为开发者所申请的相应值
+* 如果获取不到deviceToken也接收不到推送，请查看友盟后台的包名是否一致，当前设备是否添加到测试设备当中
+* Android Studio中gradle的版本需要在1.5.0或者以上
+
+更多DeviceToken相关问题，请参考[Device_token 相关问题整理【安卓版】](http://bbs.umeng.com/thread-15233-1-1.html)
+
+####5、其它
 **注：**如果是android6.0以上的api编译，需要在PushSDK的build.gradle文件的android{}块内添加useLibrary 'org.apache.http.legacy'，并把compileSdkVersion的版本号改为23。
 
 详情参考：[友盟安卓SDK集成指南](http://dev.umeng.com/push/android/integration)
