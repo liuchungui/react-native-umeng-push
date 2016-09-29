@@ -66,7 +66,7 @@ public class MainApplication extends UmengPushApplication implements ReactApplic
 注：这一步主要是因为友盟推送需要在Application当中接收推送，`UmengPushApplication`封装了友盟推送的内容。如果友盟推送如果不放在Application当中，退出应用之后是无法接收到推送的。
 
 ####3、添加AppKey & Umeng Message Secret
-在项目工程的`AndroidManifest.xml`中的<Application>标签下添加:
+在项目工程的`AndroidManifest.xml`中的`Application`标签下添加:
 
 ```
 <meta-data
