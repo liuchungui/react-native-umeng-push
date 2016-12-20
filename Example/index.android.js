@@ -29,7 +29,7 @@ UmengPush.didOpenMessage(message => {
     console.log("didOpenMessage:", message);
 });
 
-class TestProject extends Component {
+export default class testProject extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('TestProject', () => TestProject);
+AppRegistry.registerComponent('testProject', () => testProject);
