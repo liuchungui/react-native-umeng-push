@@ -41,7 +41,7 @@ https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDis
 
 ```
 include ':PushSDK'
-project(':PushSDK').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-umeng-sdk/android/PushSDK')
+project(':PushSDK').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-umeng-push/node_modules/react-native-umeng-sdk/android/PushSDK')
 ```
 
 ####2、设置Application
