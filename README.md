@@ -1,10 +1,10 @@
-#react-native-umeng-push
-##安装
+# react-native-umeng-push
+## 安装
 ```
 rnpm install react-native-umeng-push
 ```
 
-##集成到iOS
+## 集成到iOS
 在`Appdelegate.m`中对应的位置添加如下三个API：
 
 ```
@@ -33,10 +33,10 @@ https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDis
 
 启用推送设置 Enabling Push Notifications（否则会报 iOS device_token 无效）
 
-##集成到android
+## 集成到android
 注意：0.29版本以后，reactNative会自动创建MainApplication，并且将添加原生模块从MainActivity移到了MainApplication，详情请见[http://reactnative.cn/post/1774](http://reactnative.cn/post/1774)，所以我们的这里继承也有些变化，如果你的reactNative版本是0.29以下，请点击[README-pre.md](https://github.com/liuchungui/react-native-umeng-push/blob/master/README-pre.md)
 
-####1、添加PushSDK
+#### 1、添加PushSDK
 由于这个库依赖于[react-native-umeng-sdk](https://github.com/liuchungui/react-native-umeng-sdk.git)，需要在你的工程`settings.gradle`文件中添加`PushSDK`。
 
 ```
@@ -44,7 +44,7 @@ include ':PushSDK'
 project(':PushSDK').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-umeng-sdk/android/PushSDK')
 ```
 
-####2、设置Application
+#### 2、设置Application
 新版本的react-native工程已经存在`MainApplication`，我们只需要将`MainApplication`继承`UmengApplication`，然后添加对应的`UmengPushPackage`进去就行了，如下所示：
 
 ```java
@@ -71,7 +71,7 @@ public class MainApplication extends UmengPushApplication implements ReactApplic
 
 注：这一步主要是因为友盟推送需要在Application当中接收推送，`UmengPushApplication`封装了友盟推送的内容。如果友盟推送如果不放在Application当中，退出应用之后是无法接收到推送的。
 
-####3、添加AppKey & Umeng Message Secret
+#### 3、添加AppKey & Umeng Message Secret
 在项目工程的`AndroidManifest.xml`中的`Application`标签下添加:
 
 ```
@@ -85,19 +85,19 @@ public class MainApplication extends UmengPushApplication implements ReactApplic
 </meta-data>
 ```
 
-####4、安卓集成获取不到deviceToken问题
+#### 4、安卓集成获取不到deviceToken问题
 * 确定是否将appkey、MessageSecret、以及包名都更换为开发者所申请的相应值
 * 如果获取不到deviceToken也接收不到推送，请查看友盟后台的包名是否一致，当前设备是否添加到测试设备当中
 * Android Studio中gradle的版本需要在1.5.0或者以上
 
 更多DeviceToken相关问题，请参考[Device_token 相关问题整理【安卓版】](http://bbs.umeng.com/thread-15233-1-1.html)
 
-####5、其它
+#### 5、其它
 **注：**如果是android6.0以上的api编译，需要在PushSDK的build.gradle文件的android{}块内添加useLibrary 'org.apache.http.legacy'，并把compileSdkVersion的版本号改为23。
 
 详情参考：[友盟安卓SDK集成指南](http://dev.umeng.com/push/android/integration)
 
-##API
+## API
 
 | API | Note |    
 |---|---|
@@ -106,7 +106,7 @@ public class MainApplication extends UmengPushApplication implements ReactApplic
 | `didOpenMessage` | 点击推送消息打开应用回调的方法 |
 
 
-##Usage
+## Usage
 
 ```
 import UmengPush from 'react-native-umeng-push';
@@ -129,7 +129,7 @@ UmengPush.didOpenMessage(message => {
 ```
 **具体使用详情，请下载代码查看Example**
 
-##Example
+## Example
 ```
 git clone https://github.com/liuchungui/react-native-umeng-push.git
 cd react-native-umeng-push/Example
@@ -137,7 +137,7 @@ npm install --save
 ```
 
 
-##More
+## More
 * 欢迎大家Pull Request
 * 有什么疑问，欢迎提问题
 * 觉得好的，来一个star
