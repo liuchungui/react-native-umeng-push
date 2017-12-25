@@ -13,7 +13,6 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 //import com.umeng.message.UmengRegistrar;
 import com.umeng.message.entity.UMessage;
-import com.umeng.message.PushAgent;
 
 import org.json.JSONObject;
 
@@ -61,7 +60,7 @@ public class UmengPushModule extends ReactContextBaseJavaModule implements Lifec
      */
     @ReactMethod
     public void getDeviceToken(Callback callback) {
-        String registrationId = PushAgent.getRegistrationId();
+        String registrationId = mPushApplication.mPushAgent.getRegistrationId();
         callback.invoke(registrationId == null ? mPushApplication.mRegistrationId : registrationId);
     }
 
