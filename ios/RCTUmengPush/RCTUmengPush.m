@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RCTUmengPush.h"
 #import "UMessage.h"
-#import "RCTEventDispatcher.h"
+#import <React/RCTEventDispatcher.h>
 
 #define UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define _IPHONE80_ 80000
@@ -120,12 +120,12 @@ RCT_EXPORT_METHOD(getDeviceToken:(RCTResponseSenderBlock)callback) {
         
         UIUserNotificationSettings *userSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert
                                                                                      categories:[NSSet setWithObject:categorys]];
-        [UMessage registerRemoteNotificationAndUserNotificationSettings:userSettings];
+        [UMessage registerForRemoteNotifications:userSettings];
         
     }
     else{
         //register remoteNotification types
-        [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
+        [UMessage registerForRemoteNotifications:UIRemoteNotificationTypeBadge
          |UIRemoteNotificationTypeSound
          |UIRemoteNotificationTypeAlert];
     }
