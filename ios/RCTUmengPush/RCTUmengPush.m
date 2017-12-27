@@ -98,9 +98,9 @@ RCT_EXPORT_METHOD(getDeviceToken:(RCTResponseSenderBlock)callback) {
     //set AppKey and LaunchOptions
     [UMessage startWithAppkey:appkey launchOptions:launchOptions];
     
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
-    if(UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
-    {
+//#if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
+//    if(UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
+//    {
         //register remoteNotification types
         UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
         action1.identifier = @"action1_identifier";
@@ -123,20 +123,20 @@ RCT_EXPORT_METHOD(getDeviceToken:(RCTResponseSenderBlock)callback) {
         [UMessage registerForRemoteNotifications:userSettings];
         
     }
-    else{
-        //register remoteNotification types
-        [UMessage registerForRemoteNotifications:UIRemoteNotificationTypeBadge
-         |UIRemoteNotificationTypeSound
-         |UIRemoteNotificationTypeAlert];
-    }
-#else
-    
-    //register remoteNotification types
-    [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
-     |UIRemoteNotificationTypeSound
-     |UIRemoteNotificationTypeAlert];
-    
-#endif
+//    else{
+//        //register remoteNotification types
+//        [UMessage registerForRemoteNotifications:UIRemoteNotificationTypeBadge
+//         |UIRemoteNotificationTypeSound
+//         |UIRemoteNotificationTypeAlert];
+//    }
+//#else
+//
+//    //register remoteNotification types
+//    [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
+//     |UIRemoteNotificationTypeSound
+//     |UIRemoteNotificationTypeAlert];
+//
+//#endif
     
     //由推送第一次打开应用时
     if(launchOptions[@"UIApplicationLaunchOptionsRemoteNotificationKey"]) {
