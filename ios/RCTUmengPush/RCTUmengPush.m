@@ -122,7 +122,7 @@ RCT_EXPORT_METHOD(getDeviceToken:(RCTResponseSenderBlock)callback) {
                                                                                      categories:[NSSet setWithObject:categorys]];
         [UMessage registerForRemoteNotifications:userSettings];
         
-    }
+//    }
 //    else{
 //        //register remoteNotification types
 //        [UMessage registerForRemoteNotifications:UIRemoteNotificationTypeBadge
