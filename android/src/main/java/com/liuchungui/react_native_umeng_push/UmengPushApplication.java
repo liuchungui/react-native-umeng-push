@@ -1,6 +1,7 @@
 package com.liuchungui.react_native_umeng_push;
 
 import android.app.Application;
+import android.content.pm.ApplicationInfo;
 import android.app.Notification;
 import android.content.Context;
 import android.os.Handler;
@@ -29,7 +30,11 @@ public class UmengPushApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        UMConfigure.init();
+        ApplicationInfo appInfo = this.getPackageManager()
+                                    .getApplicationInfo(getPackageName(),
+                                    PackageManager.GET_META_DATA);
+        String secret = appInfo.metaData.getString("UMENG_MESSAGE_SECRET");
+        UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, secret);
         enablePush();
     }
 
@@ -122,7 +127,8 @@ public class UmengPushApplication extends Application {
 
         //设置debug状态
         if(BuildConfig.DEBUG) {
-            mPushAgent.setDebugMode(true);
+            UMConfigure.setLogEnabled(true);
+            // mPushAgent.setDebugMode(true);
         }
         //前台不显示通知
         // mPushAgent.setNotificaitonOnForeground(false);
