@@ -5,6 +5,7 @@ import android.app.Notification;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Handler;
 import android.util.Log;
 
@@ -31,12 +32,16 @@ public class UmengPushApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        ApplicationInfo appInfo = this.getPackageManager()
-                                    .getApplicationInfo(getPackageName(),
-                                    PackageManager.GET_META_DATA);
-        String secret = appInfo.metaData.getString("UMENG_MESSAGE_SECRET");
-        UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, secret);
-        enablePush();
+        try {
+            ApplicationInfo appInfo = this.getPackageManager()
+                                        .getApplicationInfo(getPackageName(),
+                                        PackageManager.GET_META_DATA);
+            String secret = appInfo.metaData.getString("UMENG_MESSAGE_SECRET");
+            UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, secret);
+            enablePush();
+        } catch(NameNotFoundException e) {
+
+        }
     }
 
     protected void setmPushModule(UmengPushModule module) {
