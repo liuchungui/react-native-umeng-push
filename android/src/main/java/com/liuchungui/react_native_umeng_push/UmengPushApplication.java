@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.util.Log;
 
+import com.umeng.commonsdk.UMConfigure;
 import com.umeng.message.IUmengRegisterCallback;
 import com.umeng.message.PushAgent;
 import com.umeng.message.UmengMessageHandler;
@@ -28,6 +29,7 @@ public class UmengPushApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        UMConfigure.init();
         enablePush();
     }
 
@@ -45,13 +47,13 @@ public class UmengPushApplication extends Application {
     private void enablePush() {
         mPushAgent = PushAgent.getInstance(this);
         mPushAgent.register(new IUmengRegisterCallback() {
-            
+
             @Override
             public void onSuccess(String deviceToken) {
                 //注册成功会返回device token
                 mRegistrationId = deviceToken;
             }
-            
+
             @Override
             public void onFailure(String s, String s1) {
                 mRegistrationId = null;
