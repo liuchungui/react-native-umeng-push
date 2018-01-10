@@ -3,9 +3,6 @@ package com.liuchungui.react_native_umeng_push;
 import android.app.Application;
 import android.app.Notification;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Handler;
 import android.util.Log;
 
@@ -32,16 +29,8 @@ public class UmengPushApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        try {
-            ApplicationInfo appInfo = this.getPackageManager()
-                                        .getApplicationInfo(getPackageName(),
-                                        PackageManager.GET_META_DATA);
-            String secret = appInfo.metaData.getString("UMENG_MESSAGE_SECRET");
-            UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, secret);
-            enablePush();
-        } catch(NameNotFoundException e) {
-
-        }
+        UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, null);
+        enablePush();
     }
 
     protected void setmPushModule(UmengPushModule module) {
