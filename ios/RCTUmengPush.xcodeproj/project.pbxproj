@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64E35C9F1FF0D6720045E1F6 /* libUMessage_Sdk_1.5.0a.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E35C9C1FF0D6480045E1F6 /* libUMessage_Sdk_1.5.0a.a */; };
 		CEA4D70C1CCBD77B002E8008 /* RCTUmengPush.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEA4D70B1CCBD77B002E8008 /* RCTUmengPush.h */; };
 		CEA4D70E1CCBD77B002E8008 /* RCTUmengPush.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D70D1CCBD77B002E8008 /* RCTUmengPush.m */; };
-		CEA4D7171CCBD86E002E8008 /* libUMessage_Sdk_1.2.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA4D7151CCBD86E002E8008 /* libUMessage_Sdk_1.2.6.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,11 +26,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		64E35C9C1FF0D6480045E1F6 /* libUMessage_Sdk_1.5.0a.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.5.0a.a; sourceTree = "<group>"; };
+		64E35C9D1FF0D6480045E1F6 /* UMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		CEA4D7081CCBD77B002E8008 /* libRCTUmengPush.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTUmengPush.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA4D70B1CCBD77B002E8008 /* RCTUmengPush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTUmengPush.h; sourceTree = "<group>"; };
 		CEA4D70D1CCBD77B002E8008 /* RCTUmengPush.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTUmengPush.m; sourceTree = "<group>"; };
-		CEA4D7151CCBD86E002E8008 /* libUMessage_Sdk_1.2.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.2.6.a; sourceTree = "<group>"; };
-		CEA4D7161CCBD86E002E8008 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,19 +38,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA4D7171CCBD86E002E8008 /* libUMessage_Sdk_1.2.6.a in Frameworks */,
+				64E35C9F1FF0D6720045E1F6 /* libUMessage_Sdk_1.5.0a.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64E35C9B1FF0D6480045E1F6 /* UMessage_Sdk_1.5.0a */ = {
+			isa = PBXGroup;
+			children = (
+				64E35C9C1FF0D6480045E1F6 /* libUMessage_Sdk_1.5.0a.a */,
+				64E35C9D1FF0D6480045E1F6 /* UMessage.h */,
+			);
+			path = UMessage_Sdk_1.5.0a;
+			sourceTree = "<group>";
+		};
+		64E35C9E1FF0D6720045E1F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CEA4D6FF1CCBD77B002E8008 = {
 			isa = PBXGroup;
 			children = (
-				CEA4D7141CCBD86E002E8008 /* UMessage_Sdk_1.2.6 */,
+				64E35C9B1FF0D6480045E1F6 /* UMessage_Sdk_1.5.0a */,
 				CEA4D70A1CCBD77B002E8008 /* RCTUmengPush */,
 				CEA4D7091CCBD77B002E8008 /* Products */,
+				64E35C9E1FF0D6720045E1F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,15 +86,6 @@
 				CEA4D70D1CCBD77B002E8008 /* RCTUmengPush.m */,
 			);
 			path = RCTUmengPush;
-			sourceTree = "<group>";
-		};
-		CEA4D7141CCBD86E002E8008 /* UMessage_Sdk_1.2.6 */ = {
-			isa = PBXGroup;
-			children = (
-				CEA4D7151CCBD86E002E8008 /* libUMessage_Sdk_1.2.6.a */,
-				CEA4D7161CCBD86E002E8008 /* UMessage.h */,
-			);
-			path = UMessage_Sdk_1.2.6;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +128,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CEA4D6FF1CCBD77B002E8008;
 			productRefGroup = CEA4D7091CCBD77B002E8008 /* Products */;
@@ -232,6 +241,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMessage_Sdk_1.2.6",
+					"$(PROJECT_DIR)/UMessage_Sdk_1.5.0a",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -246,6 +256,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UMessage_Sdk_1.2.6",
+					"$(PROJECT_DIR)/UMessage_Sdk_1.5.0a",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

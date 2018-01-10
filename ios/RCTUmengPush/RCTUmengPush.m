@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RCTUmengPush.h"
 #import "UMessage.h"
-#import "RCTEventDispatcher.h"
+#import <React/RCTEventDispatcher.h>
 
 #define UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define _IPHONE80_ 80000
@@ -96,47 +96,60 @@ RCT_EXPORT_METHOD(getDeviceToken:(RCTResponseSenderBlock)callback) {
 
 + (void)registerWithAppkey:(NSString *)appkey launchOptions:(NSDictionary *)launchOptions {
     //set AppKey and LaunchOptions
-    [UMessage startWithAppkey:appkey launchOptions:launchOptions];
+    [UMessage startWithAppkey:appkey launchOptions:launchOptions httpsEnable:YES];
     
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
-    if(UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
-    {
-        //register remoteNotification types
-        UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
-        action1.identifier = @"action1_identifier";
-        action1.title=@"Accept";
-        action1.activationMode = UIUserNotificationActivationModeForeground;//当点击的时候启动程序
-        
-        UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];  //第二按钮
-        action2.identifier = @"action2_identifier";
-        action2.title=@"Reject";
-        action2.activationMode = UIUserNotificationActivationModeBackground;//当点击的时候不启动程序，在后台处理
-        action2.authenticationRequired = YES;//需要解锁才能处理，如果action.activationMode = UIUserNotificationActivationModeForeground;则这个属性被忽略；
-        action2.destructive = YES;
-        
-        UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];
-        categorys.identifier = @"category1";//这组动作的唯一标示
-        [categorys setActions:@[action1,action2] forContext:(UIUserNotificationActionContextDefault)];
-        
-        UIUserNotificationSettings *userSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert
-                                                                                     categories:[NSSet setWithObject:categorys]];
-        [UMessage registerRemoteNotificationAndUserNotificationSettings:userSettings];
-        
-    }
-    else{
-        //register remoteNotification types
-        [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
-         |UIRemoteNotificationTypeSound
-         |UIRemoteNotificationTypeAlert];
-    }
-#else
-    
+    //#if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
+    //    if(UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
+    //    {
     //register remoteNotification types
-    [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
-     |UIRemoteNotificationTypeSound
-     |UIRemoteNotificationTypeAlert];
+    //        UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
+    //        action1.identifier = @"action1_identifier";
+    //        action1.title=@"Accept";
+    //        action1.activationMode = UIUserNotificationActivationModeForeground;//当点击的时候启动程序
+    //
+    //        UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];  //第二按钮
+    //        action2.identifier = @"action2_identifier";
+    //        action2.title=@"Reject";
+    //        action2.activationMode = UIUserNotificationActivationModeBackground;//当点击的时候不启动程序，在后台处理
+    //        action2.authenticationRequired = YES;//需要解锁才能处理，如果action.activationMode = UIUserNotificationActivationModeForeground;则这个属性被忽略；
+    //        action2.destructive = YES;
+    //
+    //        UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];
+    //        categorys.identifier = @"category1";//这组动作的唯一标示
+    //        [categorys setActions:@[action1,action2] forContext:(UIUserNotificationActionContextDefault)];
+    //
+    //        UIUserNotificationSettings *userSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert
+    //                                                                                     categories:[NSSet setWithObject:categorys]];
+    [UMessage registerForRemoteNotifications];
     
-#endif
+    //    }
+    //    else{
+    //        //register remoteNotification types
+    //        [UMessage registerForRemoteNotifications:UIRemoteNotificationTypeBadge
+    //         |UIRemoteNotificationTypeSound
+    //         |UIRemoteNotificationTypeAlert];
+    //    }
+    //#else
+    //
+    //    //register remoteNotification types
+    //    [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
+    //     |UIRemoteNotificationTypeSound
+    //     |UIRemoteNotificationTypeAlert];
+    //
+    //#endif
+    
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    center.delegate=self;
+    UNAuthorizationOptions types10=UNAuthorizationOptionBadge|  UNAuthorizationOptionAlert|UNAuthorizationOptionSound;
+    [center requestAuthorizationWithOptions:types10     completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (granted) {
+            //点击允许
+            //这里可以添加一些自己的逻辑
+        } else {
+            //点击不允许
+            //这里可以添加一些自己的逻辑
+        }
+    }];
     
     //由推送第一次打开应用时
     if(launchOptions[@"UIApplicationLaunchOptionsRemoteNotificationKey"]) {
@@ -180,3 +193,4 @@ RCT_EXPORT_METHOD(getDeviceToken:(RCTResponseSenderBlock)callback) {
 }
 
 @end
+
